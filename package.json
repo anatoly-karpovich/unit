@@ -1,0 +1,38 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "Test project on aqa course",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js",
+    "pretest": "npm run build",
+    "test": "npx mocha dist/tests/**/*.test.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test" 
+    }
+  },
+  "keywords": [
+    "typescript",
+    "javascript",
+    "qa",
+    "automation"
+  ],
+  "author": "Anatoly Karpovich",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.3.5",
+    "@types/lodash": "^4.14.195",
+    "@types/mocha": "^10.0.1",
+    "chai": "^4.3.7",
+    "husky": "^8.0.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
