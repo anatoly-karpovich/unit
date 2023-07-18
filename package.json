@@ -13,7 +13,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run precommit" 
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.ts": ["npm run test", "git add"]
     }
   },
   "keywords": [
@@ -34,6 +39,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "lint-staged": "^13.2.3",
     "lodash": "^4.17.21"
   }
 }
