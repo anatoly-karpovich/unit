@@ -8,11 +8,12 @@
     "build": "tsc",
     "start": "npm run build && node dist/index.js",
     "pretest": "npm run build",
-    "test": "npx mocha dist/tests/**/*.test.js"
+    "test": "npx mocha dist/tests/**/*.test.js",
+    "precommit": "npm test"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test" 
+      "pre-commit": "npm run precommit" 
     }
   },
   "keywords": [
