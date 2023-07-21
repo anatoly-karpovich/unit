@@ -1,11 +1,14 @@
-import { IStudent } from "../types/student.types.js";
+import { IStudent } from '../types/student.types.js';
 
 export default class Student implements IStudent {
-  constructor(public name: string, public numberOfSkippedHWs: number) {
-    if(this.isValidName(name)) {
-      this.name = name
+  constructor(
+    public name: string,
+    public numberOfSkippedHWs: number
+  ) {
+    if (this.isValidName(name)) {
+      this.name = name;
     } else {
-      throw new Error("Invalid name")
+      throw new Error('Invalid name');
     }
     this.numberOfSkippedHWs = numberOfSkippedHWs;
   }

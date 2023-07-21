@@ -1,5 +1,5 @@
-import { expect } from "chai";
-import { getUserData } from "../functions/student.functions.js";
+import { expect } from 'chai';
+import { getUserData } from '../functions/student.functions.js';
 
 describe('API Handler tests', () => {
   it('should fetch user data correctly', async () => {
@@ -20,7 +20,9 @@ describe('API Handler tests', () => {
       await getUserData(username);
     } catch (error: any) {
       // Ensure the error is handled properly
-      expect(error.message).to.equal(`API request failed: ${username} not found`);
+      expect(error.message).to.equal(
+        `API request failed: ${username} not found`
+      );
     }
   });
 });

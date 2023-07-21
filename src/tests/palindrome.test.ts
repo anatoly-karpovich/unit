@@ -1,5 +1,5 @@
-import { expect } from "chai";
-import { isPalindrome } from "../functions/student.functions.js";
+import { expect } from 'chai';
+import { isPalindrome } from '../functions/student.functions.js';
 
 describe('Palindrome Functions', () => {
   it('should identify palindromes with even-length strings', () => {

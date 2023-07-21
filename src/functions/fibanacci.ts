@@ -1,4 +1,3 @@
-
 export default function fibonacci(n: number) {
   if (n <= 0) {
     return 'Input must be a positive integer';

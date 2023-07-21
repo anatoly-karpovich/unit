@@ -8,17 +8,23 @@
     "build": "tsc",
     "start": "npm run build && node dist/index.js",
     "pretest": "npm run build",
-    "test": "npx mocha dist/tests/**/*.test.js",
+    "test": "npx mocha src/tests/**/*.test.ts",
+    "lint": "eslint . --ext .ts",
+    "prettier-format": "prettier --config .prettierrc src/**/*.ts --write",
     "precommit": "npm test"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run prettier-format && npm run lint",
+      "pre-push": ""
     }
   },
   "lint-staged": {
     "linters": {
-      "*.ts": ["npm run test", "git add"]
+      "*.ts": [
+        "npm run test",
+        "git add"
+      ]
     }
   },
   "keywords": [
@@ -33,9 +39,15 @@
     "@types/chai": "^4.3.5",
     "@types/lodash": "^4.14.195",
     "@types/mocha": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
     "chai": "^4.3.7",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "husky": "^8.0.3",
     "mocha": "^10.2.0",
+    "prettier": "^3.0.0",
     "typescript": "^5.1.6"
   },
   "dependencies": {
