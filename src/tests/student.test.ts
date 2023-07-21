@@ -10,9 +10,9 @@ describe('Student tests', () => {
 
   it('Should not create student with empty name', () => {
     try {
-      const a = new Student('', 0);
+      new Student('', 0);
     } catch (e: any) {
-      expect(e.message).to.equal('Invalid name');
+      expect(e.message).to.equal("Invalid name");
     }
   });
 });
